@@ -6,6 +6,10 @@ fi
 
 set -euo pipefail
 
+SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+REPO_ROOT=$(cd "${SCRIPT_DIR}/.." && pwd)
+cd "$REPO_ROOT"
+
 if ! command -v az >/dev/null 2>&1; then
     echo "Error: Azure CLI ('az') is not installed or not in PATH." >&2
     exit 1
@@ -18,11 +22,99 @@ fi
 
 readonly DATA_ZONE_SKU="DataZoneStandard"
 readonly MODEL_QUERY="[?model.lifecycleStatus!='Deprecated' && length(model.skus[?name=='${DATA_ZONE_SKU}']) > \`0\`].[model.name, model.version]"
+readonly OUTPUT_MARKDOWN_PATH="${OUTPUT_MARKDOWN_PATH:-docs/eu-compliant-models.md}"
+readonly README_PATH="${README_PATH:-README.md}"
+readonly UPDATE_README="${UPDATE_README:-true}"
+readonly GENERATED_AT="$(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+
+table_file=$(mktemp)
+readme_table_file=$(mktemp)
+readme_tmp_file=$(mktemp)
+trap 'rm -f "$table_file" "$readme_table_file" "$readme_tmp_file"' EXIT
 
 declare -A seen_models=()
 declare -A model_versions=()
 declare -A model_regions=()
 declare -a ordered_keys=()
+
+markdown_escape() {
+    local value=$1
+    value=${value//\\/\\\\}
+    value=${value//|/\\|}
+    printf '%s' "$value"
+}
+
+write_readme_table() {
+    {
+        echo "_Last updated: ${GENERATED_AT}._"
+        echo
+        echo "[Full generated output](${OUTPUT_MARKDOWN_PATH})"
+        echo
+        cat "$table_file"
+    } > "$readme_table_file"
+}
+
+update_readme() {
+    if [[ "${UPDATE_README,,}" != "true" ]]; then
+        return
+    fi
+
+    if [[ ! -f "$README_PATH" ]]; then
+        echo "Error: README file '${README_PATH}' does not exist." >&2
+        exit 1
+    fi
+
+    if ! grep -q '<!-- START_TABLE -->' "$README_PATH" || ! grep -q '<!-- END_TABLE -->' "$README_PATH"; then
+        echo "Error: README file '${README_PATH}' does not contain the expected table delimiters." >&2
+        exit 1
+    fi
+
+    awk -v replacement_file="$readme_table_file" '
+        BEGIN {
+            while ((getline line < replacement_file) > 0) {
+                replacement = replacement line ORS
+            }
+            close(replacement_file)
+        }
+        /<!-- START_TABLE -->/ {
+            print
+            print ""
+            printf "%s", replacement
+            in_generated_block = 1
+            next
+        }
+        /<!-- END_TABLE -->/ {
+            in_generated_block = 0
+            print
+            next
+        }
+        !in_generated_block {
+            print
+        }
+    ' "$README_PATH" > "$readme_tmp_file"
+
+    mv "$readme_tmp_file" "$README_PATH"
+}
+
+write_markdown_output() {
+    mkdir -p "$(dirname "$OUTPUT_MARKDOWN_PATH")"
+
+    {
+        echo "# EU-Compliant Azure AI Foundry Models"
+        echo
+        echo "Generated on ${GENERATED_AT}."
+        echo
+        cat "$table_file"
+    } > "$OUTPUT_MARKDOWN_PATH"
+
+    write_readme_table
+    update_readme
+
+    echo "Markdown results written to ${OUTPUT_MARKDOWN_PATH}."
+    if [[ "${UPDATE_README,,}" == "true" ]]; then
+        echo "README table updated in ${README_PATH}."
+    fi
+}
 
 mapfile -t EU_REGIONS < <(
     az account list-locations \
@@ -100,8 +192,15 @@ echo "---------------------------------------------------------------------"
 
 if (( ${#ordered_keys[@]} == 0 )); then
     echo "No matching models found with ${DATA_ZONE_SKU} in the checked EU regions."
+    echo "No matching models found with ${DATA_ZONE_SKU} in the checked EU regions." > "$table_file"
+    write_markdown_output
     exit 0
 fi
+
+{
+    echo "| Model | Version | Regions |"
+    echo "| --- | --- | --- |"
+} > "$table_file"
 
 printf '%-30s %-15s %s\n' "Model" "Version" "Regions"
 printf '%-30s %-15s %s\n' "------------------------------" "---------------" "------------------------------"
@@ -110,7 +209,13 @@ for key in "${ordered_keys[@]}"; do
     model_name=${key%%|||*}
     regions=$(dedupe_csv_list "${model_regions[$key]}")
     printf '%-30s %-15s %s\n' "$model_name" "${model_versions[$key]}" "$regions"
+    printf '| %s | %s | %s |\n' \
+        "$(markdown_escape "$model_name")" \
+        "$(markdown_escape "${model_versions[$key]}")" \
+        "$(markdown_escape "$regions")" >> "$table_file"
 done
+
+write_markdown_output
 
 echo
 echo "Execution completed successfully. Use these exact model names and versions for your Bicep or ARM deployments."

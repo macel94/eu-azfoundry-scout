@@ -1,0 +1,50 @@
+name: Update EU Azure AI Foundry Models
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 5 * * 1"
+
+permissions:
+  contents: write
+  id-token: write
+
+concurrency:
+  group: update-eu-azure-ai-foundry-models
+  cancel-in-progress: false
+
+jobs:
+  update-model-table:
+    name: Update model table
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Azure Login
+        uses: azure/login@v3
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          allow-no-subscriptions: true
+          enable-AzPSSession: true
+
+      - name: Generate model markdown
+        env:
+          OUTPUT_MARKDOWN_PATH: docs/eu-compliant-models.md
+          README_PATH: README.md
+        run: bash src/GetModelsFromFoundry.sh
+
+      - name: Commit generated changes
+        run: |
+          if [[ -z "$(git status --porcelain -- README.md docs/eu-compliant-models.md)" ]]; then
+            echo "No generated changes to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md docs/eu-compliant-models.md
+          git commit -m "Update EU-compliant Azure AI Foundry models"
+          git push
