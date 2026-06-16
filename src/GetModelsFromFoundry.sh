@@ -21,7 +21,7 @@ if ! az account show --output none >/dev/null 2>&1; then
 fi
 
 readonly DATA_ZONE_SKU="DataZoneStandard"
-readonly MODEL_QUERY="[?model.lifecycleStatus!='Deprecated' && length(model.skus[?name=='${DATA_ZONE_SKU}']) > \`0\`].[model.name, model.version]"
+readonly MODEL_QUERY="[?model.lifecycleStatus!='Deprecated' && length(model.skus[?name=='${DATA_ZONE_SKU}']) > \`0\`].[model.name, model.version, model.deprecation.inference || model.deprecation.fineTune || (model.skus[?name=='${DATA_ZONE_SKU}'].deprecationDate | [0]) || '']"
 readonly OUTPUT_MARKDOWN_PATH="${OUTPUT_MARKDOWN_PATH:-docs/eu-compliant-models.md}"
 readonly README_PATH="${README_PATH:-README.md}"
 readonly UPDATE_README="${UPDATE_README:-true}"
@@ -34,6 +34,7 @@ trap 'rm -f "$table_file" "$readme_table_file" "$readme_tmp_file"' EXIT
 
 declare -A seen_models=()
 declare -A model_versions=()
+declare -A model_deprecation_dates=()
 declare -A model_regions=()
 declare -a ordered_keys=()
 
@@ -170,10 +171,12 @@ for region in "${EU_REGIONS[@]}"; do
         continue
     fi
 
-    while IFS=$'\t' read -r model_name model_version; do
+    while IFS=$'\t' read -r model_name model_version deprecation_date; do
         if [[ -z "$model_name" || -z "$model_version" ]]; then
             continue
         fi
+
+        deprecation_date=${deprecation_date:-N/A}
 
         key="${model_name}|||${model_version}"
 
@@ -181,8 +184,13 @@ for region in "${EU_REGIONS[@]}"; do
             seen_models["$key"]=1
             ordered_keys+=("$key")
             model_versions["$key"]="$model_version"
+            model_deprecation_dates["$key"]="$deprecation_date"
             model_regions["$key"]="$region"
         else
+            if [[ "${model_deprecation_dates[$key]}" == "N/A" && "$deprecation_date" != "N/A" ]]; then
+                model_deprecation_dates["$key"]="$deprecation_date"
+            fi
+
             model_regions["$key"]+=", ${region}"
         fi
     done <<< "$region_results"
@@ -198,20 +206,21 @@ if (( ${#ordered_keys[@]} == 0 )); then
 fi
 
 {
-    echo "| Model | Version | Regions |"
-    echo "| --- | --- | --- |"
+    echo "| Model | Version | Deprecation Date | Regions |"
+    echo "| --- | --- | --- | --- |"
 } > "$table_file"
 
-printf '%-30s %-15s %s\n' "Model" "Version" "Regions"
-printf '%-30s %-15s %s\n' "------------------------------" "---------------" "------------------------------"
+printf '%-30s %-15s %-20s %s\n' "Model" "Version" "Deprecation Date" "Regions"
+printf '%-30s %-15s %-20s %s\n' "------------------------------" "---------------" "--------------------" "------------------------------"
 
 for key in "${ordered_keys[@]}"; do
     model_name=${key%%|||*}
     regions=$(dedupe_csv_list "${model_regions[$key]}")
-    printf '%-30s %-15s %s\n' "$model_name" "${model_versions[$key]}" "$regions"
-    printf '| %s | %s | %s |\n' \
+    printf '%-30s %-15s %-20s %s\n' "$model_name" "${model_versions[$key]}" "${model_deprecation_dates[$key]}" "$regions"
+    printf '| %s | %s | %s | %s |\n' \
         "$(markdown_escape "$model_name")" \
         "$(markdown_escape "${model_versions[$key]}")" \
+        "$(markdown_escape "${model_deprecation_dates[$key]}")" \
         "$(markdown_escape "$regions")" >> "$table_file"
 done
 
