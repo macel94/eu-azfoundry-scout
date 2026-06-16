@@ -1,19 +1,6 @@
-# eu-azfoundry-scout 🇪🇺🔍
+# EU-Compliant Azure AI Foundry Models
 
-An automated DevOps utility designed to map the shifting compliance footprint of Azure AI Foundry. 
-
-Because Azure's regional model availability and data residency configurations change constantly without real-time upstream visibility, this repository runs a weekly cron workflow against Azure geographies. It dynamically queries, filters, and cross-references active AI models to identify exactly which ones support EU data residency constraints (`DataZoneStandard` SKUs).
-
-### Why this exists
-When building enterprise-grade, GDPR-compliant architectures with Bicep, ARM, or Terraform, you cannot afford to guess which model versions are available in European regions. **eu-azfoundry-scout** ensures you always have an up-to-date, verifiable list of deployment targets.
-
-## 📊 Current EU-Compliant Models (Updated Weekly)
-
-<!-- START_TABLE -->
-
-_Last updated: 2026-06-16 09:13:01 UTC._
-
-[Full generated output](docs/eu-compliant-models.md)
+Generated on 2026-06-16 09:13:01 UTC.
 
 | Model | Version | Regions |
 | --- | --- | --- |
@@ -49,4 +36,3 @@ _Last updated: 2026-06-16 09:13:01 UTC._
 | model-router | 2025-05-19 | swedencentral |
 | model-router | 2025-08-07 | swedencentral |
 | model-router | 2025-11-18 | swedencentral |
-<!-- END_TABLE -->
