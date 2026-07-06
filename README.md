@@ -11,7 +11,7 @@ When building enterprise-grade, GDPR-compliant architectures with Bicep, ARM, or
 
 <!-- START_TABLE -->
 
-_Last updated: 2026-06-29 06:38:31 UTC._
+_Last updated: 2026-07-06 06:35:56 UTC._
 
 [Full generated output](docs/eu-compliant-models.md)
 
@@ -26,6 +26,7 @@ _Last updated: 2026-06-29 06:38:31 UTC._
 | text-embedding-3-large | 1 | 2027-04-15T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
 | o1 | 2024-12-17 | 2026-07-15T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
 | o3-mini | 2025-01-31 | 2026-08-02T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
+| o3 | 2025-04-16 | 2026-10-16T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
 | o4-mini | 2025-04-16 | 2026-10-16T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
 | gpt-4.1 | 2025-04-14 | 2026-10-14T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
 | gpt-4.1-mini | 2025-04-14 | 2026-10-14T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
