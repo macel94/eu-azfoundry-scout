@@ -11,7 +11,7 @@ When building enterprise-grade, GDPR-compliant architectures with Bicep, ARM, or
 
 <!-- START_TABLE -->
 
-_Last updated: 2026-07-06 06:35:56 UTC._
+_Last updated: 2026-07-13 08:22:44 UTC._
 
 [Full generated output](docs/eu-compliant-models.md)
 
@@ -24,8 +24,8 @@ _Last updated: 2026-07-06 06:35:56 UTC._
 | text-embedding-ada-002 | 2 | 2027-04-15T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
 | text-embedding-3-small | 1 | 2027-04-15T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
 | text-embedding-3-large | 1 | 2027-04-15T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
-| o1 | 2024-12-17 | 2026-07-15T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
-| o3-mini | 2025-01-31 | 2026-08-02T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
+| o1 | 2024-12-17 | 2026-09-16T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
+| o3-mini | 2025-01-31 | 2026-10-01T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
 | o3 | 2025-04-16 | 2026-10-16T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
 | o4-mini | 2025-04-16 | 2026-10-16T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
 | gpt-4.1 | 2025-04-14 | 2026-10-14T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
@@ -37,8 +37,10 @@ _Last updated: 2026-07-06 06:35:56 UTC._
 | gpt-5.1 | 2025-11-13 | 2027-05-15T00:00:00Z | francecentral, swedencentral |
 | gpt-5.4 | 2026-03-05 | 2027-03-05T00:00:00Z | francecentral, germanywestcentral, italynorth, northeurope, norwayeast, polandcentral, spaincentral, swedencentral, switzerlandnorth, westeurope |
 | gpt-5.5 | 2026-04-24 | 2027-04-24T00:00:00Z | francecentral, germanywestcentral, italynorth, northeurope, norwayeast, polandcentral, spaincentral, swedencentral, switzerlandnorth, westeurope |
+| gpt-5.6-sol | 2026-07-09 | 2027-07-09T00:00:00Z | francecentral, germanywestcentral, italynorth, norwayeast, polandcentral, spaincentral, swedencentral, switzerlandnorth, westeurope |
+| gpt-5.6-luna | 2026-07-09 | 2027-07-09T00:00:00Z | francecentral, germanywestcentral, italynorth, norwayeast, polandcentral, spaincentral, swedencentral, switzerlandnorth, westeurope |
+| gpt-5.6-terra | 2026-07-09 | 2027-07-09T00:00:00Z | francecentral, germanywestcentral, italynorth, norwayeast, polandcentral, spaincentral, swedencentral, switzerlandnorth, westeurope |
 | Mistral-Large-3 | 1 | 2099-12-31T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
-| mistral-document-ai-2505 | 1 | 2099-12-31T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
 | FLUX-1.1-pro | 1 | 2099-12-31T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
 | FLUX.1-Kontext-pro | 1 | 2099-12-31T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
 | Cohere-rerank-v4.0-fast | 1 | 2099-12-31T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
@@ -49,7 +51,7 @@ _Last updated: 2026-07-06 06:35:56 UTC._
 | mistral-medium-3-5 | 1 | 2026-10-01T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
 | gpt-5.4-nano | 2026-03-17 | 2027-03-18T00:00:00Z | northeurope |
 | gpt-image-1.5 | 2025-12-16 | 2026-12-16T00:00:00Z | polandcentral, swedencentral |
-| model-router | 2025-05-19 | 2026-07-31T00:00:00Z | swedencentral |
-| model-router | 2025-08-07 | 2026-07-31T00:00:00Z | swedencentral |
+| model-router | 2025-05-19 | 2026-08-30T00:00:00Z | swedencentral |
+| model-router | 2025-08-07 | 2026-08-30T00:00:00Z | swedencentral |
 | model-router | 2025-11-18 | 2027-05-20T00:00:00Z | swedencentral |
 <!-- END_TABLE -->
