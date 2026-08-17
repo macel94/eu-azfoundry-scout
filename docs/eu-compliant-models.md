@@ -1,6 +1,6 @@
 # EU-Compliant Azure AI Foundry Models
 
-Generated on 2026-08-10 06:16:15 UTC.
+Generated on 2026-08-17 05:41:18 UTC.
 
 | Model | Version | Deprecation Date | Regions |
 | --- | --- | --- | --- |
