@@ -11,7 +11,7 @@ When building enterprise-grade, GDPR-compliant architectures with Bicep, ARM, or
 
 <!-- START_TABLE -->
 
-_Last updated: 2026-08-17 05:41:18 UTC._
+_Last updated: 2026-08-24 05:44:33 UTC._
 
 [Full generated output](docs/eu-compliant-models.md)
 
@@ -34,7 +34,7 @@ _Last updated: 2026-08-17 05:41:18 UTC._
 | o4-mini | 2025-04-16 | 2026-10-16T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
 | gpt-4.1 | 2025-04-14 | 2027-04-14T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
 | gpt-4.1-mini | 2025-04-14 | 2027-04-14T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
-| gpt-4.1-nano | 2025-04-14 | 2026-10-14T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
+| gpt-4.1-nano | 2025-04-14 | 2027-04-14T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
 | gpt-5 | 2025-08-07 | 2027-02-09T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
 | gpt-5-nano | 2025-08-07 | 2027-02-09T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
 | gpt-5-mini | 2025-08-07 | 2027-02-09T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
@@ -58,4 +58,5 @@ _Last updated: 2026-08-17 05:41:18 UTC._
 | mistral-medium-3-5 | 1 | 2027-10-01T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
 | gpt-5.4-nano | 2026-03-17 | 2027-09-21T00:00:00Z | northeurope |
 | gpt-image-1.5 | 2025-12-16 | 2026-12-16T00:00:00Z | polandcentral, swedencentral |
+| gpt-realtime-2.1 | 2026-07-07 | 2026-10-15T00:00:00Z | swedencentral |
 <!-- END_TABLE -->
