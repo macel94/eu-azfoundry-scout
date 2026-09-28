@@ -11,13 +11,13 @@ When building enterprise-grade, GDPR-compliant architectures with Bicep, ARM, or
 
 <!-- START_TABLE -->
 
-_Last updated: 2026-09-21 10:36:41 UTC._
+_Last updated: 2026-09-28 11:37:02 UTC._
 
 [Full generated output](docs/eu-compliant-models.md)
 
 | Model | Version | Deprecation Date | Regions |
 | --- | --- | --- | --- |
-| gpt-4o | 2024-05-13 | 2026-10-01T00:00:00Z | francecentral, germanywestcentral, polandcentral, spaincentral, swedencentral, westeurope |
+| gpt-4o | 2024-05-13 | 2026-12-09T00:00:00Z | francecentral, germanywestcentral, polandcentral, spaincentral, swedencentral, westeurope |
 | gpt-4o | 2024-08-06 | 2027-04-14T00:00:00Z | francecentral, germanywestcentral, polandcentral, spaincentral, swedencentral, westeurope |
 | gpt-4o-mini | 2024-07-18 | 2027-04-14T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
 | gpt-4o | 2024-11-20 | 2027-04-14T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
@@ -47,6 +47,8 @@ _Last updated: 2026-09-21 10:36:41 UTC._
 | gpt-5.6-sol | 2026-07-09 | 2028-01-11T00:00:00Z | francecentral, germanywestcentral, italynorth, norwayeast, polandcentral, spaincentral, swedencentral, switzerlandnorth, westeurope |
 | gpt-5.6-luna | 2026-07-09 | 2028-01-11T00:00:00Z | francecentral, germanywestcentral, italynorth, norwayeast, polandcentral, spaincentral, swedencentral, switzerlandnorth, westeurope |
 | gpt-5.6-terra | 2026-07-09 | 2028-01-11T00:00:00Z | francecentral, germanywestcentral, italynorth, norwayeast, polandcentral, spaincentral, swedencentral, switzerlandnorth, westeurope |
+| gpt-6-luna | 2026-09-22 | 2028-03-11T00:00:00Z | francecentral, germanywestcentral, italynorth, norwayeast, polandcentral, spaincentral, swedencentral, switzerlandnorth, westeurope |
+| gpt-6-sol | 2026-09-22 | 2028-03-11T00:00:00Z | francecentral, germanywestcentral, italynorth, norwayeast, polandcentral, spaincentral, swedencentral, switzerlandnorth, westeurope |
 | Mistral-Large-3 | 1 | 2099-12-31T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
 | FLUX-1.1-pro | 1 | 2099-12-31T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
 | FLUX.1-Kontext-pro | 1 | 2099-12-31T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
