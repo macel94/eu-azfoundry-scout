@@ -11,7 +11,7 @@ When building enterprise-grade, GDPR-compliant architectures with Bicep, ARM, or
 
 <!-- START_TABLE -->
 
-_Last updated: 2026-09-28 11:37:02 UTC._
+_Last updated: 2026-10-05 12:11:58 UTC._
 
 [Full generated output](docs/eu-compliant-models.md)
 
@@ -49,6 +49,7 @@ _Last updated: 2026-09-28 11:37:02 UTC._
 | gpt-5.6-terra | 2026-07-09 | 2028-01-11T00:00:00Z | francecentral, germanywestcentral, italynorth, norwayeast, polandcentral, spaincentral, swedencentral, switzerlandnorth, westeurope |
 | gpt-6-luna | 2026-09-22 | 2028-03-11T00:00:00Z | francecentral, germanywestcentral, italynorth, norwayeast, polandcentral, spaincentral, swedencentral, switzerlandnorth, westeurope |
 | gpt-6-sol | 2026-09-22 | 2028-03-11T00:00:00Z | francecentral, germanywestcentral, italynorth, norwayeast, polandcentral, spaincentral, swedencentral, switzerlandnorth, westeurope |
+| gpt-6.1-sol | 2026-09-29 | 2028-03-11T00:00:00Z | francecentral, germanywestcentral, italynorth, norwayeast, polandcentral, spaincentral, swedencentral, switzerlandnorth, westeurope |
 | Mistral-Large-3 | 1 | 2099-12-31T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
 | FLUX-1.1-pro | 1 | 2099-12-31T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
 | FLUX.1-Kontext-pro | 1 | 2099-12-31T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
