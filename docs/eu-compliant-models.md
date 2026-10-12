@@ -1,6 +1,6 @@
 # EU-Compliant Azure AI Foundry Models
 
-Generated on 2026-10-05 12:11:58 UTC.
+Generated on 2026-10-12 12:58:41 UTC.
 
 | Model | Version | Deprecation Date | Regions |
 | --- | --- | --- | --- |
@@ -47,5 +47,6 @@ Generated on 2026-10-05 12:11:58 UTC.
 | DeepSeek-V4-Flash | 2026-04-23 | 2028-02-20T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
 | mistral-ocr-4-0 | 1 | 2027-10-01T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
 | mistral-medium-3-5 | 1 | 2027-10-01T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
+| Microsoft-Decision-1 | 1 | 2027-02-04T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
 | gpt-5.4-nano | 2026-03-17 | 2027-09-21T00:00:00Z | northeurope |
 | gpt-image-1.5 | 2025-12-16 | 2026-12-16T00:00:00Z | polandcentral, swedencentral |
