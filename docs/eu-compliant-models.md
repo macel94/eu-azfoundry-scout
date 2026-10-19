@@ -1,6 +1,6 @@
 # EU-Compliant Azure AI Foundry Models
 
-Generated on 2026-10-12 12:58:41 UTC.
+Generated on 2026-10-19 10:39:41 UTC.
 
 | Model | Version | Deprecation Date | Regions |
 | --- | --- | --- | --- |
@@ -8,7 +8,7 @@ Generated on 2026-10-12 12:58:41 UTC.
 | gpt-4o | 2024-08-06 | 2027-04-14T00:00:00Z | francecentral, germanywestcentral, polandcentral, spaincentral, swedencentral, westeurope |
 | gpt-4o-mini | 2024-07-18 | 2027-04-14T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
 | gpt-4o | 2024-11-20 | 2027-04-14T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
-| gpt-4o-transcribe | 2025-03-20 | 2026-12-31T00:00:00Z | francecentral, swedencentral |
+| gpt-4o-transcribe | 2025-03-20 | 2027-02-26T00:00:00Z | francecentral, swedencentral |
 | text-embedding-ada-002 | 2 | 2028-02-09T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
 | text-embedding-3-small | 1 | 2028-02-09T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
 | text-embedding-3-large | 1 | 2028-02-09T00:00:00Z | francecentral, germanywestcentral, italynorth, polandcentral, spaincentral, swedencentral, westeurope |
@@ -34,6 +34,7 @@ Generated on 2026-10-12 12:58:41 UTC.
 | gpt-5.6-sol | 2026-07-09 | 2028-01-11T00:00:00Z | francecentral, germanywestcentral, italynorth, norwayeast, polandcentral, spaincentral, swedencentral, switzerlandnorth, westeurope |
 | gpt-5.6-luna | 2026-07-09 | 2028-01-11T00:00:00Z | francecentral, germanywestcentral, italynorth, norwayeast, polandcentral, spaincentral, swedencentral, switzerlandnorth, westeurope |
 | gpt-5.6-terra | 2026-07-09 | 2028-01-11T00:00:00Z | francecentral, germanywestcentral, italynorth, norwayeast, polandcentral, spaincentral, swedencentral, switzerlandnorth, westeurope |
+| gpt-6-astra | 2026-09-03 | 2028-01-11T00:00:00Z | francecentral, germanywestcentral, italynorth, northeurope, norwayeast, polandcentral, spaincentral, swedencentral, switzerlandnorth, westeurope |
 | gpt-6-luna | 2026-09-22 | 2028-03-11T00:00:00Z | francecentral, germanywestcentral, italynorth, norwayeast, polandcentral, spaincentral, swedencentral, switzerlandnorth, westeurope |
 | gpt-6-sol | 2026-09-22 | 2028-03-11T00:00:00Z | francecentral, germanywestcentral, italynorth, norwayeast, polandcentral, spaincentral, swedencentral, switzerlandnorth, westeurope |
 | gpt-6.1-sol | 2026-09-29 | 2028-03-11T00:00:00Z | francecentral, germanywestcentral, italynorth, norwayeast, polandcentral, spaincentral, swedencentral, switzerlandnorth, westeurope |
