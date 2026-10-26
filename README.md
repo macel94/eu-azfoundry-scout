@@ -11,7 +11,7 @@ When building enterprise-grade, GDPR-compliant architectures with Bicep, ARM, or
 
 <!-- START_TABLE -->
 
-_Last updated: 2026-10-19 10:39:41 UTC._
+_Last updated: 2026-10-26 10:56:36 UTC._
 
 [Full generated output](docs/eu-compliant-models.md)
 
